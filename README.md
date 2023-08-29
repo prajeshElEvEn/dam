@@ -14,6 +14,11 @@
 
 ## Resources
 
+- [Ardupilot]()
+- [DroneKit]()
+- [WebODM]()
+- [DroneDB]()
+
 ## Contribution
 
 ## License
