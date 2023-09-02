@@ -3,6 +3,12 @@
 venv
 node_modules
 
+## scripts
+
+scripts/automation/ardupilot
+scripts/automation/gazebo
+scripts/automation/qgroundcontrol
+
 ## tests
 tests
 
