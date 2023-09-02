@@ -1,9 +1,10 @@
 ## server
 
 venv
-
 node_modules
 
+## tests
+tests
 
 ## client
 
