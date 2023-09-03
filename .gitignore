@@ -9,6 +9,15 @@ scripts/automation/ardupilot
 scripts/automation/gazebo
 scripts/automation/qgroundcontrol
 
+*.bin
+*.tlog
+*.raw
+*.parm
+
+logs
+terrain
+
+
 ## tests
 tests
 
