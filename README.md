@@ -88,45 +88,56 @@ Before setting up DAM, ensure you have the following prerequisites installed:
 - pip [v22.0.2](https://pypi.org/project/pip/)
 - ROS2 [Iron Irwini](https://docs.ros.org/en/iron/Installation.html)
 - Gazebo [Garden](https://gazebosim.org/docs/garden/install_ubuntu)
+- [python3-venv](https://docs.python.org/3/library/venv.html)
 
 ### Installation
 
 1. Clone the DAM repository:
 
    ```shell
-   git clone https://github.com/yourusername/DAM.git
+   git clone https://github.com/prajeshElEvEn/dam.git
    ```
 
 2. Navigate to the project directory:
 
    ```shell
-   cd DAM
+   cd dam
    ```
 
-3. Install frontend dependencies:
+3. Create virtual environment
 
    ```shell
-   cd frontend
-   npm install
+   python3 -m venv venv
    ```
 
-4. Install backend dependencies (if applicable):
+4. Activate virtual environment
 
    ```shell
-   cd backend
-   npm install
+   source venv/bin/activate
    ```
 
-5. Follow specific setup instructions for each component (frontend, backend, ROS2, etc.) as described in their respective README files.
+5. Install python dependencies:
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+6. Install node dependencies:
+
+   ```shell
+   npm i
+   ```
+
+7. Install frontend dependencies:
+
+   ```shell
+   cd client
+   npm i
+   ```
 
 ## Usage
 
-Provide detailed instructions on how to use your software, including:
-
-- How to define takeoff points and perimeters for drone flights.
-- How to initiate automated drone flights.
-- How to visualize and interact with data using the frontend dashboard.
-- How to access and interpret mapping and object detection results.
+1. Run
 
 ## Components
 
