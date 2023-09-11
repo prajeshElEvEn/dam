@@ -88,7 +88,6 @@ Before setting up DAM, ensure you have the following prerequisites installed:
 - pip [v22.0.2](https://pypi.org/project/pip/)
 - ROS2 [Iron Irwini](https://docs.ros.org/en/iron/Installation.html)
 - Gazebo [Garden](https://gazebosim.org/docs/garden/install_ubuntu)
-- [python3-venv](https://docs.python.org/3/library/venv.html)
 
 ### Installation
 
@@ -104,35 +103,9 @@ Before setting up DAM, ensure you have the following prerequisites installed:
    cd dam
    ```
 
-3. Create virtual environment
-
-   ```shell
-   python3 -m venv venv
-   ```
-
-4. Activate virtual environment
-
-   ```shell
-   source venv/bin/activate
-   ```
-
-5. Install python dependencies:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-6. Install node dependencies:
-
-   ```shell
-   npm i
-   ```
-
-7. Install frontend dependencies:
-
-   ```shell
-   cd client
-   npm i
+3. Run `setup.sh`
+   ```bash
+   ./setup.sh
    ```
 
 ## Usage
