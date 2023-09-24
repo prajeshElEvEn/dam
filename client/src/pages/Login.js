@@ -62,7 +62,9 @@ const Login = () => {
                     ),
                   }}
                 />
-                <Button variant="contained">Login</Button>
+                <Button variant="contained" href="/automation">
+                  Login
+                </Button>
                 <Typography>
                   Do not have an account? <Link href="/">Sign Up</Link>{" "}
                 </Typography>

@@ -65,9 +65,11 @@ const Signup = () => {
                   }}
                   helperText="Password must be at least 8 characters long."
                 />
-                <Button variant="contained">Sign Up</Button>
+                <Button variant="contained" href="/automation">
+                  Sign Up
+                </Button>
                 <Typography>
-                  Already have an account? <Link href="/login">Login</Link>{" "}
+                  Already have an account? <Link href="/login">Login</Link>
                 </Typography>
               </Stack>
             </Stack>
