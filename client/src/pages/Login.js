@@ -62,7 +62,7 @@ const Login = () => {
                     ),
                   }}
                 />
-                <Button variant="contained" href="/automation">
+                <Button variant="contained" href="/dashboard">
                   Login
                 </Button>
                 <Typography>

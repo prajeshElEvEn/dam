@@ -12,9 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/automation" element={<Dashboard />} />
-        <Route path="/mapping" element={<Mapping />} />
-        <Route path="/detection" element={<Detection />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>
   );
