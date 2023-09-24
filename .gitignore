@@ -8,6 +8,7 @@ node_modules
 scripts/automation/ardupilot
 scripts/automation/gazebo
 scripts/automation/qgroundcontrol
+scripts/automation/ros2_ws
 
 *.bin
 *.tlog
