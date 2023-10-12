@@ -6,6 +6,7 @@ const {
   sendResetEmail,
   validateResetToken,
 } = require("./auth");
+const { uploadAvatar } = require("./multer");
 
 utils.log = log;
 utils.success = success;
@@ -17,3 +18,4 @@ utils.generateToken = generateToken;
 utils.generateResetToken = generateResetToken;
 utils.sendResetEmail = sendResetEmail;
 utils.validateResetToken = validateResetToken;
+utils.uploadAvatar = uploadAvatar;
