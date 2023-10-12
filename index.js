@@ -3,6 +3,7 @@ const cors = require("cors");
 const { env, log, success, db } = require("./server/utils");
 const constants = require("./constants");
 const { errorHandler } = require("./server/middlewares/errorMiddlewares");
+const { auth } = require("./server/routes");
 
 function startServer() {
   env();
@@ -14,6 +15,8 @@ function startServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use("/uploads", express.static(constants.paths.uploadDir));
+
+  app.use("/api/auth", auth);
 
   app.use(errorHandler);
 
