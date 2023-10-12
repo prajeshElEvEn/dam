@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
-const { error, success } = require("..");
 const {
   EMAIL_SERVICE,
   EMAIL_HOST,
@@ -41,10 +40,8 @@ const sendResetEmail = async (email, resetToken) => {
 
   try {
     await transporter.sendMail(mailOptions);
-    success("Password reset email sent successfully.");
   } catch (err) {
-    error("Error sending password reset email:", err);
-    throw new Error("Email could not be sent");
+    throw new Error({ message: "Could not send email", error: err });
   }
 };
 
