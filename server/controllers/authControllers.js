@@ -2,39 +2,28 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const {
-  error,
   generateToken,
   generateResetToken,
   sendResetEmail,
   validateResetToken,
 } = require("../utils");
 
-const handleError = (err, res) => {
-  error(err);
-  res.status(500).json({ message: err.message });
-};
-
-const createTokenAndRespond = (user, res, status, idKey = "id") => {
-  const token = generateToken(user._id);
-  if (!token) {
-    return handleError(new Error("Token generation failed"), res);
-  }
-  req.session.user = user;
-  res.status(status).json({ [idKey]: user._id, token });
-};
-
-// @desc    register user
+// @desc    Register user
 // @route   POST /api/auth/register
-// @access  public
+// @access  Public
 const registerUser = asyncHandler(async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
   if (!firstName || !lastName || !email || !password) {
-    return handleError(new Error("Please fill in all the fields"), res);
+    res.status(400);
+    throw new Error("Please fill in all the fields");
   }
 
-  if (await User.findOne({ email })) {
-    return handleError(new Error("User already exists!"), res);
+  const userExists = await User.findOne({ email });
+
+  if (userExists) {
+    res.status(400);
+    throw new Error("User already exists");
   }
 
   const salt = await bcrypt.genSalt(10);
@@ -48,45 +37,71 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if (!user) {
-    return handleError(new Error("Registration failed"), res);
+    res.status(400);
+    throw new Error("Registration failed");
   }
 
-  createTokenAndRespond(user, res, 201);
+  const token = generateToken(user._id);
+
+  if (!token) {
+    res.status(500);
+    throw new Error("Token generation failed");
+  }
+
+  res.status(201).json({ id: user._id, token });
 });
 
-// @desc    login user
+// @desc    Login user
 // @route   POST /api/auth/login
-// @access  public
+// @access  Public
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return handleError(new Error("Please fill in all the fields"), res);
-  }
-
-  const user = await User.findOne({ email });
-
-  if (!user || !(await bcrypt.compare(password, user.password))) {
-    return handleError(new Error("Invalid credentials"), res);
-  }
-
-  createTokenAndRespond(user, res, 200);
-});
-
-// @desc    reset password
-// @route   POST /api/auth/reset
-// @access  public
-const resetPassword = asyncHandler(async (req, res) => {
-  const { email } = req.body;
-
-  if (!email) {
-    return handleError(new Error("Please fill in all the fields"), res);
+    res.status(400);
+    throw new Error("Please fill in all the fields");
   }
 
   const user = await User.findOne({ email });
 
   if (!user) {
-    return handleError(new Error("User not found"), res);
+    res.status(401);
+    throw new Error("Invalid credentials");
+  }
+
+  const passwordMatch = await bcrypt.compare(password, user.password);
+
+  if (!passwordMatch) {
+    res.status(401);
+    throw new Error("Invalid credentials");
+  }
+
+  const token = generateToken(user._id);
+
+  if (!token) {
+    res.status(500);
+    throw new Error("Token generation failed");
+  }
+
+  res.status(200).json({ id: user._id, token });
+});
+
+// @desc    Reset password
+// @route   POST /api/auth/reset
+// @access  Public
+const resetPassword = asyncHandler(async (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    res.status(400);
+    throw new Error("Please fill in all the fields");
+  }
+
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
   }
 
   const resetToken = generateResetToken();
@@ -101,15 +116,16 @@ const resetPassword = asyncHandler(async (req, res) => {
   res.status(200).json({ message: "Password reset email sent" });
 });
 
-// @desc    confirm reset password
+// @desc    Confirm reset password
 // @route   POST /api/auth/reset/:token
-// @access  public
+// @access  Public
 const confirmResetPassword = asyncHandler(async (req, res) => {
   const { token } = req.params;
   const { newPassword } = req.body;
 
   if (!token || !newPassword) {
-    return handleError(new Error("Please fill in all the fields"), res);
+    res.status(400);
+    throw new Error("Please fill in all the fields");
   }
 
   const user = await User.findOne({
@@ -117,8 +133,14 @@ const confirmResetPassword = asyncHandler(async (req, res) => {
     resetPasswordExpires: { $gt: Date.now() },
   });
 
-  if (!user || !validateResetToken(token, user)) {
-    return handleError(new Error("Invalid or expired token"), res);
+  if (!user) {
+    res.status(400);
+    throw new Error("Invalid or expired token");
+  }
+
+  if (!validateResetToken(token, user)) {
+    res.status(400);
+    throw new Error("Invalid token");
   }
 
   const salt = await bcrypt.genSalt(10);
