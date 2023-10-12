@@ -2,6 +2,8 @@
 
 **Drone Automation & Mapping**
 
+> server side
+
 ## Description
 
 DAM (Drone Automation and Mapping) is a versatile software solution designed to automate drone operations, capture aerial data, generate maps, and perform object detection. This README provides an overview of the project, its components, and instructions for setup and usage.
