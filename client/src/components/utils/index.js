@@ -11,17 +11,17 @@ export const primaryNav = [
   {
     icon: <AutoAwesomeIcon />,
     label: "Automation",
-    to: "/",
+    to: "/automation",
   },
   {
     icon: <AutoAwesomeMosaicIcon />,
     label: "Mapping",
-    to: "/",
+    to: "/mapping",
   },
   {
     icon: <RadarIcon />,
     label: "Detection",
-    to: "/",
+    to: "/detection",
   },
 ];
 export const secondaryNav = [
