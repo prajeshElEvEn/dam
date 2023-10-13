@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Drawer, DrawerHeader } from "../styledComponents";
 import {
   Avatar,
@@ -12,12 +11,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import { theme } from "../../styles/theme";
-import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  InboxIcon,
-  MailIcon,
-} from "../../assets/icons";
+import { ChevronLeftIcon, ChevronRightIcon } from "../../assets/icons";
 import { primaryNav, secondaryNav } from "../utils";
 import MenuItem from "../menu/MenuItem";
 
