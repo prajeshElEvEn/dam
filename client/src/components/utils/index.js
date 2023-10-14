@@ -7,6 +7,7 @@ import {
 } from "../../assets/icons";
 
 export const drawerWidth = 240;
+
 export const primaryNav = [
   {
     icon: <AutoAwesomeIcon />,
@@ -24,6 +25,7 @@ export const primaryNav = [
     to: "/detection",
   },
 ];
+
 export const secondaryNav = [
   {
     icon: <SettingsIcon />,

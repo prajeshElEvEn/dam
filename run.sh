@@ -8,4 +8,4 @@ gnome-terminal -- bash -c 'sim_vehicle.py -v ArduCopter -f gazebo-iris --model J
 
 sleep 5
 
-gnome-terminal -- bash -c './scripts/automation/qgroundcontrol/QGroundControl.AppImage'
+gnome-terminal -- bash -c './scripts/utils/qgroundcontrol/QGroundControl.AppImage'
