@@ -6,7 +6,7 @@ import qgcImage from "./qgc.png";
 import webodmImage from "./webodm.png";
 import gazeboImage from "./gazebo.png";
 
-export const images = {
+export {
   logoImage,
   authorImage,
   ardupilotImage,
