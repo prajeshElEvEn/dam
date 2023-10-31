@@ -8,6 +8,8 @@ gnome-terminal --tab --title="QGC" -- bash -c 'echo "Opening QGC..."; sleep 2; .
 
 gnome-terminal --tab --title="WebODM" -- bash -c 'echo "Launching WebODM..."; sleep 2; cd scripts/mapping/WebODM; ./webodm.sh start'
 
+gnome-terminal --tab --title="DroneDB" -- bash -c 'echo "Launching DroneDB..."; sleep 2; docker run -it --rm -p 5000:5000 -v ${PWD}/scripts/mapping/registry-data:/data dronedb/registry'
+
 gnome-terminal --tab --title="DAM" -- bash -c 'echo "Launching DAM..."; sleep 2; npm run dev'
 
 gnome-terminal --tab --title="Ardupilot" -- bash -c 'echo "Launching SITL..."; sleep 2; sim_vehicle.py -w -v ArduCopter -f gazebo-iris --model JSON --console -DG --enable-dds'
