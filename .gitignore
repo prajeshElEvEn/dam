@@ -6,7 +6,21 @@ node_modules
 
 ## scripts
 
-scripts
+scripts/automation/build
+scripts/automation/install
+scripts/automation/log
+scripts/automation/src/ardupilot
+scripts/automation/src/ardupilot_gazebo
+scripts/automation/src/ardupilot_gz
+scripts/automation/src/micro_ros_agent
+scripts/automation/src/Micro-XRCE-DDS
+scripts/automation/src/Micro-XRCE-DDS-Gen
+scripts/automation/src/ros_gz
+scripts/automation/src/sdformat_urdf
+
+scripts/detection
+scripts/mapping
+scripts/utils
 
 *.bin
 *.tlog

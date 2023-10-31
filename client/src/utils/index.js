@@ -1,5 +1,4 @@
-import { instance } from "./axios";
+import { instance, authInstance, fileInstance } from "./axios/index";
+import { drawRectangle } from "./tensorflow/index";
 
-export const utils = {
-  axios: instance,
-};
+export { instance, authInstance, fileInstance, drawRectangle };
