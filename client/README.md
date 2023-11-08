@@ -1,3 +1,0 @@
-# DAM
-
-> client side
