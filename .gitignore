@@ -4,6 +4,7 @@ src/qgc/*
 src/catkin_ws/.catkin_tools
 src/catkin_ws/build
 src/catkin_ws/devel
+src
 
 *.bin
 *.parm
