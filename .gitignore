@@ -1,0 +1,8 @@
+logs
+terrain
+src/qgc/*
+
+*.bin
+*.parm
+*.tlog
+*.raw
