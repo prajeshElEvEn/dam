@@ -3,9 +3,9 @@ terrain
 
 src/ardupilot
 src/ardupilot_gazebo
-src/qgc
+src/qgc/QGroundControl.AppImage
 src/catkin_ws
-src/gazebo_ws
+# src/gazebo_ws/gazebo_models
 
 *.bin
 *.parm
