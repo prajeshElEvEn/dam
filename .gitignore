@@ -1,10 +1,11 @@
 logs
 terrain
-src/qgc/*
-src/catkin_ws/.catkin_tools
-src/catkin_ws/build
-src/catkin_ws/devel
-src
+
+src/ardupilot
+src/ardupilot_gazebo
+src/qgc
+src/catkin_ws
+src/gazebo_ws
 
 *.bin
 *.parm
