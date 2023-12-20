@@ -2,7 +2,7 @@ logs
 terrain
 
 src/qgc/QGroundControl.AppImage
-# src/ardupilot
+src/ardupilot
 # src/ardupilot_gazebo
 # src/catkin_ws
 # src/gazebo_ws/gazebo_models
