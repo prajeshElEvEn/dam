@@ -10,6 +10,7 @@ import {
   ForgotPage,
   LoginPage,
   MappingPage,
+  OverviewPage,
   ProfilePage,
   RegisterPage,
   ResetPage,
@@ -19,7 +20,8 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<DashboardLayout />}>
-        <Route index element={<AutomationPage />} />
+        <Route index element={<OverviewPage />} />
+        <Route path="/automation" element={<AutomationPage />} />
         <Route path="/detection" element={<DetectionPage />} />
         <Route path="/mapping" element={<MappingPage />} />
         <Route path="/profile" element={<ProfilePage />} />

@@ -20,14 +20,20 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import MapIcon from "@mui/icons-material/Map";
 import RadarIcon from "@mui/icons-material/Radar";
 import PersonIcon from "@mui/icons-material/Person";
+import LayersIcon from "@mui/icons-material/Layers";
 import { Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { AppBar, DrawerHeader, Main, drawerWidth } from "../utils";
 
 const menuItems = [
   {
-    icon: <AutoAwesomeIcon />,
+    icon: <LayersIcon />,
     link: "/",
+    name: "Overview",
+  },
+  {
+    icon: <AutoAwesomeIcon />,
+    link: "/automation",
     name: "Automation",
   },
   {
