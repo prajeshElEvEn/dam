@@ -7,6 +7,7 @@ import DetectionPage from "./dashboard/DetectionPage";
 import MappingPage from "./dashboard/MappingPage";
 import ProfilePage from "./dashboard/ProfilePage";
 import NotFoundPage from "./utils/NotFoundPage";
+import OverviewPage from "./dashboard/OverviewPage";
 
 export {
   ForgotPage,
@@ -17,5 +18,6 @@ export {
   DetectionPage,
   MappingPage,
   ProfilePage,
+  OverviewPage,
   NotFoundPage,
 };

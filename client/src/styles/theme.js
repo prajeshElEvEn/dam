@@ -6,10 +6,10 @@ export const theme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#2a2a2a",
+      main: "#8103FF",
     },
     secondary: {
-      main: "#585858",
+      main: "#f50057",
     },
   },
   typography: {
