@@ -1,8 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const { errorHandler } = require("./middlewares/errorMiddleware");
-const { auth, user, todo } = require("./src/routes");
 const loadEnv = require("./utils/env");
+const db = require("./utils/db");
+const { warn, log } = require("logggger");
 
 const startServer = () => {
   const currentEnv = loadEnv();
@@ -14,9 +15,8 @@ const startServer = () => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
-  app.use("/api/auth", auth);
-  app.use("/api/users", user);
-  app.use("/api/todos", todo);
+  app.use("/api/auth", require("./routes/authRoutes"));
+  app.use("/api/users", require("./routes/userRoutes"));
 
   app.use(errorHandler);
 
