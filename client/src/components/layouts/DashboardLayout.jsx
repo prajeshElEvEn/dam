@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -15,10 +16,36 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import MapIcon from "@mui/icons-material/Map";
+import RadarIcon from "@mui/icons-material/Radar";
+import PersonIcon from "@mui/icons-material/Person";
 import { Container } from "@mui/material";
 import { Outlet } from "react-router-dom";
 import { AppBar, DrawerHeader, Main, drawerWidth } from "../utils";
+
+const menuItems = [
+  {
+    icon: <AutoAwesomeIcon />,
+    link: "/",
+    name: "Automation",
+  },
+  {
+    icon: <MapIcon />,
+    link: "/mapping",
+    name: "Mapping",
+  },
+  {
+    icon: <RadarIcon />,
+    link: "/detection",
+    name: "Detection",
+  },
+  {
+    icon: <PersonIcon />,
+    link: "/profile",
+    name: "Profile",
+  },
+];
 
 export default function DashboardLayout() {
   const theme = useTheme();
@@ -47,7 +74,7 @@ export default function DashboardLayout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            DAM
           </Typography>
         </Toolbar>
       </AppBar>
@@ -75,14 +102,14 @@ export default function DashboardLayout() {
         </DrawerHeader>
         <Divider />
         <List>
-          <ListItem key={"hi"} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <InboxIcon />
-              </ListItemIcon>
-              <ListItemText primary={"menu"} />
-            </ListItemButton>
-          </ListItem>
+          {menuItems.map((menuItem) => (
+            <ListItem key={menuItem.name} disablePadding>
+              <ListItemButton component={RouterLink} to={menuItem.link}>
+                <ListItemIcon>{menuItem.icon}</ListItemIcon>
+                <ListItemText primary={menuItem.name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
         </List>
         <Divider />
       </Drawer>

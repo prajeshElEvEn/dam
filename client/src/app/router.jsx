@@ -10,6 +10,7 @@ import {
   ForgotPage,
   LoginPage,
   MappingPage,
+  ProfilePage,
   RegisterPage,
   ResetPage,
 } from "../pages";
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
         <Route index element={<AutomationPage />} />
         <Route path="/detection" element={<DetectionPage />} />
         <Route path="/mapping" element={<MappingPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
       <Route path="auth" element={<AuthLayout />}>
         <Route path="register" element={<RegisterPage />} />
