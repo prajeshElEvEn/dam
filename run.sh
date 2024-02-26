@@ -10,8 +10,8 @@ gnome-terminal --tab --title="Gazebo" -- bash -c "echo 'Launching Simulation...'
 
 gnome-terminal --tab --title="Ardupilot" -- bash -c "echo 'Launching SITL...'; sleep 3; sim_vehicle.py -v ArduCopter -f gazebo-iris --console; bash"
 
-gnome-terminal --tab --title="APM" -- bash -c "echo 'Launching APM...'; sleep 4; roslaunch iq_sim apm.launch; bash"
+#gnome-terminal --tab --title="APM" -- bash -c "echo 'Launching APM...'; sleep 4; roslaunch iq_sim apm.launch; bash"
 
-gnome-terminal --tab --title="QGC" -- bash -c "echo 'Launching QGC...'; sleep 5; ./src/qgc/QGroundControl.AppImage; bash"
+#gnome-terminal --tab --title="QGC" -- bash -c "echo 'Launching QGC...'; sleep 5; ./src/qgc/QGroundControl.AppImage; bash"
 
-gnome-terminal --tab --title="Script" -- bash -c "echo 'Executing Square Script...'; sleep 6; rosrun iq_gnc square; bash"
+#gnome-terminal --tab --title="Script" -- bash -c "echo 'Executing Square Script...'; sleep 6; rosrun iq_gnc square; bash"

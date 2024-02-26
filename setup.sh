@@ -80,9 +80,40 @@ if [ ! -f "/etc/apt/sources.list.d/ros-latest.list" ]; then
     sudo apt install ros-noetic-desktop-full
     echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
     source ~/.bashrc
-    sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+    sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool python3-catkin-tools build-essential
     sudo rosdep init
     rosdep update
 else
     echo "ROS already present."
 fi
+
+# setting up catkin
+echo "> Setting up catkin..."
+sleep 2
+cd src/catkin_ws
+if [ ! -d "devel" ]; then
+    catkin init
+    wstool init src
+    rosinstall_generator --upstream mavros | tee /tmp/mavros.rosinstall
+    rosinstall_generator mavlink | tee -a /tmp/mavros.rosinstall
+    wstool merge -t src /tmp/mavros.rosinstall
+    wstool update -t src
+    rosdep install --from-paths src --ignore-src --rosdistro `echo $ROS_DISTRO` -y
+    catkin build
+    echo "source $PWD/devel/setup.bash" >> ~/.bashrc
+    source ~/.bashrc
+    sudo src/mavros/mavros/scripts/install_geographiclib_datasets.sh
+    echo "GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:$PWD/src/iq_sim/models" >> ~/.bashrc
+    catkin build
+    source ~/.bashrc
+else
+    echo "Catkin already present."
+fi
+
+cd ../..
+
+
+# installing additional deps
+echo "> Installing additional dependencies..."
+sleep 2
+sudo apt install ros-noetic-gazebo-ros ros-noetic-gazebo-plugins
