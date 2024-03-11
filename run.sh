@@ -8,7 +8,9 @@
 
 gnome-terminal --tab --title="Gazebo" -- bash -c "echo 'Launching Simulation...'; sleep 2; roslaunch iq_sim runway.launch; bash"
 
-gnome-terminal --tab --title="Ardupilot" -- bash -c "echo 'Launching SITL...'; sleep 3; cd src/ardupilot/ArduCopter/ && sim_vehicle.py -v ArduCopter -f gazebo-iris --console; bash"
+gnome-terminal --tab --title="Ardupilot" -- bash -c "echo 'Launching SITL...'; sleep 3; cd src/ardupilot/ArduCopter && sim_vehicle.py -v ArduCopter -f gazebo-iris --console; bash"
+
+gnome-terminal --tab --title="DroneDB" -- bash -c "echo 'Launching SITL...'; sleep 3; cd src/dronedb && sudo ./run.py; bash"
 
 # gnome-terminal --tab --title="Ardupilot" -- bash -c "echo 'Launching SITL...'; sleep 3; sim_vehicle.py -v ArduCopter -f gazebo-iris --console; bash"
 
