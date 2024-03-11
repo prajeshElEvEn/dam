@@ -1,0 +1,30 @@
+{
+"bounds": [305977.267685, 4545124.599075, 214.908234, 306401.786377, 4545629.502228, 237.312531],
+"boundsConforming": [305977.267685, 4545124.599075, 214.908234, 306401.786377, 4545629.502228, 237.312531],
+"dataType": "laszip",
+"hierarchyType": "json",
+"points": 10016684,
+"span": 128,
+"version": "1.0.0",
+"schema": [
+	{"name": "Red", "type": "unsigned", "size": 2},
+	{"name": "X", "type": "float", "scale": 0.01, "offset": 306190, "size": 8},
+	{"name": "EdgeOfFlightLine", "type": "unsigned", "size": 1},
+	{"name": "Blue", "type": "unsigned", "size": 2},
+	{"name": "GpsTime", "type": "float", "size": 8},
+	{"name": "Y", "type": "float", "scale": 0.01, "offset": 4.54538e+06, "size": 8},
+	{"name": "Z", "type": "float", "scale": 0.01, "offset": 226.11, "size": 8},
+	{"name": "Green", "type": "unsigned", "size": 2},
+	{"name": "ReturnNumber", "type": "unsigned", "size": 1},
+	{"name": "NumberOfReturns", "type": "unsigned", "size": 1},
+	{"name": "Intensity", "type": "unsigned", "size": 2},
+	{"name": "PointSourceId", "type": "unsigned", "size": 2},
+	{"name": "ScanDirectionFlag", "type": "unsigned", "size": 1},
+	{"name": "UserData", "type": "unsigned", "size": 1},
+	{"name": "ScanAngleRank", "type": "float", "size": 4},
+	{"name": "Classification", "type": "unsigned", "size": 1}
+],
+"srs": {
+"wkt": "PROJCS[\"WGS 84 / UTM zone 17N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-81],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32617\"]]"
+}
+}
