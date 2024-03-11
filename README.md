@@ -56,6 +56,10 @@ The project is open source, built using open-source resources, encouraging commu
 - [Code](https://github.com/prajeshElEvEn/dam)
 - [DAM](https://www.canva.com/design/DAF3nRfV2ZI/ZfwLeXOn9yBleu4uNb-nMg/edit?utm_content=DAF3nRfV2ZI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
+### Credits
+
+- [Intelligent Quads](https://www.youtube.com/@IntelligentQuads)
+
 ### Team
 
 - [Pranjal Agarwal](https://www.linkedin.com/in/pranjalagarwal0409/)
